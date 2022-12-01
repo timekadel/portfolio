@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+
+  <!-- HTML Meta Tags -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta name="theme-color" content="#201f4d" />
+  <meta name="description" content="<%= htmlWebpackPlugin.options.description.replace('\n','') %>">
+  <meta name="keywords" content=" htmlWebpackPlugin.options.keywprds.replace('\n','') " />
+
+  <!-- Facebook Meta Tags -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="<%= htmlWebpackPlugin.options.url %>" />
+  <meta property="og:title" content="<%= htmlWebpackPlugin.options.title %>" />
+  <meta property="og:description" content="<%= htmlWebpackPlugin.options.description.replace('\n','') %>" />
+  <meta property="og:image" content="<%= htmlWebpackPlugin.options.image %>" />
+
+  <!-- Twitter Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="twitter:domain" content="<%= htmlWebpackPlugin.options.url %>">
+  <meta property="twitter:url" content="<%= htmlWebpackPlugin.options.url %>">
+  <meta name="twitter:title" content="<%= htmlWebpackPlugin.options.title %>">
+  <meta name="twitter:description" content="<%= htmlWebpackPlugin.options.description.replace('\n','') %>">
+  <meta name="twitter:image" content="<%= htmlWebpackPlugin.options.image %>">
+
+  <link rel="icon" href="<%= htmlWebpackPlugin.options.image %>">
+  <title><%= htmlWebpackPlugin.options.title %></title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+</head>
+
+<body>
+  <noscript>
+    <strong>We're sorry but MiniLanding doesn't work properly without JavaScript enabled. Please enable it to
+      continue.</strong>
+  </noscript>
+  <div id="app"></div>
+  <!-- built files will be auto injected -->
+</body>
+<style>
+  * {
+    font-family: 'Roboto', sans-serif;
+  }
+
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    overflow-y: auto
+  }
+
+  #app {
+    background: black;
+    overflow: hidden;
+    height: 100%;
+  }
+
+  * {
+    scrollbar-color: #FFFFFF1A #0C0E0A;
+    scrollbar-width: thin;
+    z-index: 0;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  * .invisible_scrollbar {
+    scrollbar-color: transparent;
+    scrollbar-width: none;
+    z-index: 0;
+  }
+
+  ::-webkit-scrollbar {
+    -webkit-appearance: none;
+    background: #0C0E0A;
+    width: 5px;
+    height: 5px;
+    z-index: 0;
+  }
+
+  div.invisible_scrollbar::-webkit-scrollbar {
+    background: transparent;
+    width: 0px;
+    height: 0px;
+    z-index: 0;
+  }
+
+  ::-webkit-scrollbar-corner {
+    background: transparent;
+  }
+
+
+  ::-webkit-scrollbar-track {
+    background: #0C0E0A;
+    width: 5px;
+    height: 5px;
+  }
+
+  div.invisible_scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+    width: 0px;
+    height: 0px;
+    z-index: 0;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #FFFFFF1A;
+    width: 5px;
+    height: 5px;
+  }
+
+  div.invisible_scrollbar::-webkit-scrollbar-thumb {
+    background: transparent;
+    width: 0px;
+    height: 0px;
+  }
+</style>
+
+</html>
