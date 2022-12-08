@@ -5,7 +5,7 @@
         <h1 class="text-white opacity-90 z-10 text-6xl sm:text-6xl md:max-w-2xl lg:text-7xl xl:text-8xl font-bold">I'm {{age.years}} Years,</h1>
         <br />
         <h3 class="z-10 text-white text-2xl sm:text-2xl xl:text-3xl max-w-xl font-thin opacity-90">
-          <b>{{age.months}}</b> months <b>{{age.days}}</b> days <b>{{age.hours}}</b> hours <b>{{age.minutes}}</b> minutes and <b>{{age.seconds}}</b> Seconds old.
+          <b>{{age.months}}</b> months <b>{{age.days}}</b> days <b>{{age.hours}}</b> hours <b>{{age.minutes}}</b> minutes and <b>{{age.seconds}}</b> seconds old.
         </h3>
       </div>
     </Transition>

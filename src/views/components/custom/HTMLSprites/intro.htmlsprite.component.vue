@@ -5,7 +5,7 @@
         <h1 class="text-white opacity-90 z-10 text-6xl sm:text-6xl md:max-w-2xl lg:text-7xl xl:text-8xl font-bold">Hi, My Name Is Timé Kadel.</h1>
         <br />
         <h3 class="z-10 text-white text-2xl sm:text-2xl xl:text-3xl max-w-xl font-thin opacity-90">
-          I'm a <b>french engineer</b> in <b>Electronics</b> and <b>Information Technology</b> who enjoys working on a various range of
+          I'm a <b>French engineer</b> in <b>Electronics</b> and <b>Information Technology</b> who enjoys working on a various range of
           <b>Innovative </b> technologies and <b>projects</b>.
         </h3>
         <div class="flex gap-4 mt-8">
