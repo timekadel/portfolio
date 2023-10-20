@@ -2,10 +2,17 @@
   <div class="LabelHTMLSprite">
     <Transition name="fade">
       <div v-if="displayed" style="opacity-100">
-        <h1 class="text-white opacity-90 z-10 text-6xl sm:text-6xl md:max-w-2xl lg:text-7xl xl:text-8xl font-bold">I'm {{age.years}} Years,</h1>
+        <h1 class="text-white opacity-90 z-10 text-6xl sm:text-6xl md:max-w-2xl lg:text-7xl xl:text-8xl font-bold">I'm
+          {{ age.years }} Years,</h1>
         <br />
         <h3 class="z-10 text-white text-2xl sm:text-2xl xl:text-3xl max-w-xl font-thin opacity-90">
-          <b>{{age.months}}</b> months <b>{{age.days}}</b> days <b>{{age.hours}}</b> hours <b>{{age.minutes}}</b> minutes and <b>{{age.seconds}}</b> seconds old.
+          <b>{{ age.months }}</b> {{ handlePlural(age.months, "month") }} <b>{{ age.days }}</b> {{ handlePlural(age.days,
+            "day") }} <b>{{ age.hours }}</b>
+          {{ handlePlural(age.hours,
+            "hour") }} <b>{{ age.minutes }}</b> {{ handlePlural(age.minutes,
+    "minute") }}
+          and <b>{{ age.seconds }}</b> {{ handlePlural(age.seconds,
+            "second") }} old.
         </h3>
       </div>
     </Transition>
@@ -25,13 +32,13 @@ export default {
       rotation: new THREE.Vector3(Math.PI / 2, -0.1, 0),
       scale: 1 / 280,
       displayed: false,
-      age:{
-        years:0,
-        months:0,
-        days:0,
-        hours:0,
-        minutes:0,
-        seconds:0
+      age: {
+        years: 0,
+        months: 0,
+        days: 0,
+        hours: 0,
+        minutes: 0,
+        seconds: 0
       }
     };
   },
@@ -47,6 +54,9 @@ export default {
       this.age.seconds = diff.getUTCSeconds();
       // return `I am <b>${y_diff}</b> years\n <b>${m_diff}</b> months <b>${d_diff}</b> days <b>${h_diff}</b> hours <b>${mn_diff}</b> minutes and <b>${s_diff}</b> Seconds old.`;
     },
+    handlePlural(value, word) {
+      return `${word}${(value > 1) ? 's' : ''}`;
+    }
   },
   mounted() {
     this.$el.style.display = "block";
@@ -63,10 +73,12 @@ export default {
 .LabelHTMLSprite {
   pointer-events: none !important;
 }
+
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.5s ease;
 }
+
 .fade-enter-from,
 .fade-leave-to {
   opacity: 0;
