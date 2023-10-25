@@ -6,13 +6,11 @@
           {{ age.years }} Years,</h1>
         <br />
         <h3 class="z-10 text-white text-2xl sm:text-2xl xl:text-3xl max-w-xl font-thin opacity-90">
-          <b>{{ age.months }}</b> {{ handlePlural(age.months, "month") }} <b>{{ age.days }}</b> {{ handlePlural(age.days,
-            "day") }} <b>{{ age.hours }}</b>
-          {{ handlePlural(age.hours,
-            "hour") }} <b>{{ age.minutes }}</b> {{ handlePlural(age.minutes,
-    "minute") }}
-          and <b>{{ age.seconds }}</b> {{ handlePlural(age.seconds,
-            "second") }} old.
+          <b>{{ age.months }}</b> {{ handlePlural(age.months, "month") }} 
+          <b>{{ age.days }}</b> {{ handlePlural(age.days, "day") }}
+          <b>{{ age.hours }}</b> {{ handlePlural(age.hours,"hour") }}
+          <b>{{ age.minutes }}</b> {{ handlePlural(age.minutes, "minute") }}
+          and <b>{{ age.seconds }}</b> {{ handlePlural(age.seconds, "second") }} old.
         </h3>
       </div>
     </Transition>
