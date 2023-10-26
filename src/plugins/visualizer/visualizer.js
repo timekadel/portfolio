@@ -138,7 +138,6 @@ class Visualizer extends EventEmitter {
     this.renderer.physicallyCorrectLights = true;
     this.renderer.domElement.style.top = 0;
     this.renderer.domElement.style.zIndex = 1;
-    this.renderer.domElement.style.cursor = "grab"
     this.renderer.toneMapping = THREE.ACESFilmicToneMapping;
     this.renderer.outputEncoding = THREE.sRGBEncoding;
   }
@@ -428,7 +427,7 @@ class Visualizer extends EventEmitter {
     })
     DollyInstance.addStop({
       name: "age",
-      position: new THREE.Vector3(-1, -4, 1.5),
+      position: new THREE.Vector3(-1, -5, 1.8),
       target: this.scene_assets.laptop_screen,
     })
     DollyInstance.addStop({
