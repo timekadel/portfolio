@@ -84,13 +84,13 @@ export default {
   height: 100%;
   display: flex;
   align-items: center;
-  transition: all .1s;
+  transition: transform .1s;
   font-weight: 600;
 }
 .icon{
   width: 0px;
   opacity: 0;
-  transition: all .1s;
+  transition: opacity .1s;
 }
 .btn:hover > .icon{
  opacity: 1;
