@@ -135,7 +135,7 @@ class Dolly {
 
   travelToPreviousStop() {
     let stopIndex = this.stops.findIndex(stop => stop.id === this.stop.id);
-    if (stopIndex > -1 && stopIndex - 1 >= 0) {
+    if (stopIndex > -1 && stopIndex - 1 > 0) {
       this.travelToStop(this.stops[stopIndex - 1].name);
       return true;
     }

@@ -411,10 +411,19 @@ class Visualizer extends EventEmitter {
         color: 'white'
       })
     );
+    const ageTargetHandle = new THREE.Mesh(
+      new THREE.BoxGeometry(1, 1, 1, 1, 1, 1),
+      new THREE.MeshBasicMaterial({
+        color: 'white'
+      })
+    );
+
     centerTargetHandle.position.copy(VUE3DRenderer.HTMLSprites[0].CSS3DObjectHandle.position)
     backTargetHandle.position.set(0,0,4.5)
     centerTargetHandle.position.setY(0)
     centerTargetHandle.translateZ(-2.3)
+    ageTargetHandle.position.set(1,0,1.5)
+
     DollyInstance.addStop({
       name: "overview",
       position: new THREE.Vector3(10.5, 10.5, 10.5),
@@ -427,8 +436,8 @@ class Visualizer extends EventEmitter {
     })
     DollyInstance.addStop({
       name: "age",
-      position: new THREE.Vector3(-1, -5, 1.8),
-      target: this.scene_assets.laptop_screen,
+      position: new THREE.Vector3(-1, -4, 1.8),
+      target: ageTargetHandle,
     })
     DollyInstance.addStop({
       name: "fireworks",
