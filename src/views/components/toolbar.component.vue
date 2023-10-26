@@ -3,7 +3,7 @@
     <div
       v-if="displayed"
       :class="{ toggledMobile: toggledMobile, 'shadow-none': sub }"
-      :style="{ background: color + (toggledMobile ? 'E6' : '99') }"
+      :style="{ background: '#000000D6' }"
       class="shadow-md md:pl-16 md:pr-16 wrapper overflow-hidden z-20 p-4 toolbar right-0 flex flex-col md:flex-row gap-4 md:gap-x-12 md:items-center font-regular transition-all"
     >
       <span class="flex justify-center items-center">
@@ -24,24 +24,23 @@
       </span>
       <div :class="{ 'flex-1': !toggledMobile }"/>
       <Transition mode="out-in" :name="$utils.resizeHandler.breakpoints.lg ? 'slide-fade-reverse' : ''">
-        <div :key="$route.name" class="flex flex-col md:flex-row gap-4 md:gap-x-12 md:items-center">
+        <div :key="$route.name" class="flex flex-col md:flex-row gap-4 md:gap-x-8 md:items-center">
           <div
             v-for="(item, i) in items"
             v-show="item.toolbar"
             @click="goTo(item)"
             :key="i"
             :class="{
-              cta: item.external,
               toggledMobile: toggledMobile,
               'border-white': hash === '#' + item.name.replaceAll(' ', '').match(/([^/]+)/)[0],
             }"
             :style="{ opacity: hash === '#' + item.name.replaceAll(' ', '') || item.external ? 1 : 0.7 }"
-            class="relative p-1 border-b-solid border-b-2 underline-offset-8 flex items-center gap-x-2 cursor-pointer font-bold uppercase text-white border-transparent hover:opacity-100 transition-all"
+            class="relative p-1 border-b-solid border-b-2 underline-offset-8 flex items-center gap-x-2 cursor-pointer font-semibold uppercase text-white border-transparent hover:opacity-100 transition-all"
           >
-            <span v-if="item.icon && !item.external" class="flex">
+            <span v-if="item.icon" class="flex">
               <eva-icon :name="item.icon" fill="white"></eva-icon>
             </span>
-            <p>{{ item.name }}</p>
+            <p v-if="!item.external" class="text-white">{{ item.name }}</p>
           </div>
         </div>
       </Transition>
@@ -79,13 +78,6 @@ export default {
     title: {
       type: String,
       default: "",
-    },
-    /**
-     * Toolbar color
-     */
-    color: {
-      type: String,
-      default: "#000000",
     },
     /**
      * Toolbar hero alternate styling
