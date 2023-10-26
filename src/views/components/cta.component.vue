@@ -31,7 +31,6 @@ export default {
 .btn {
   border: 2px solid #e7e7e7;
   color: #e7e7e7;
-  /* transition: all ease-in-out .25s; */
   border-radius: 50px;
 }
 .btn.light {
@@ -65,11 +64,10 @@ export default {
 .icon{
   width: 0px;
   opacity: 0;
-  transition: opacity .1s;
+  transition: transform .1s, opacity .1s;
 }
 .btn:hover > .icon{
- opacity: 1;
- margin-left:-8px;
- margin-right: 8px;
+  opacity: 1;
+  transform: translateX(-8px);
 }
 </style>

@@ -90,11 +90,10 @@ export default {
 .icon{
   width: 0px;
   opacity: 0;
-  transition: opacity .1s;
+  transition: transform .1s, opacity .1s;
 }
 .btn:hover > .icon{
  opacity: 1;
- margin-left:-8px;
- margin-right: 8px;
+ transform: translateX(-8px);
 }
 </style>

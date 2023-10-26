@@ -30,7 +30,6 @@ import DollyInstance from './dolly.js';
 import CharacterController from './character.controller.js';
 import VUE3DRenderer from './vue3d_renderer.js';
 import Terminal from './terminal.canvas.js'
-// import Fireworks from './fireworks';
 
 var visualizerInstance = null;
 
