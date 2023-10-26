@@ -30,7 +30,6 @@ export default {
         name: this.contact.name || "Contact",
         toolbar: true,
         light: this.contact.light,
-        icon: "message-square-outline",
         custom: {
           component: markRaw(Contact),
           props: {
@@ -38,6 +37,11 @@ export default {
           },
         },
         nofill: true,
+      },{
+        name: "repositories",
+        icon: "github",
+        toolbar: true,
+        external: "https://github.com/timekadel"
       });
     }
   },
