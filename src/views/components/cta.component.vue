@@ -6,6 +6,7 @@
   >
     <span class="text">{{ title }}</span>
     <eva-icon v-if="filled" class="icon" name="arrow-right" :fill="light ? '#e7e7e7':'#222020'"></eva-icon>
+    <eva-icon v-else class="icon" name="arrow-down" :fill="light ? '#222020':'#e7e7e7'"></eva-icon>
   </div>
 </template>
 
@@ -49,7 +50,7 @@ export default {
 .btn:hover {
   opacity: 1!important;
 }
-.btn.filled:hover > .text{
+.btn:hover > .text{
   transform: translateX(-8px);
 }
 
