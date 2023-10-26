@@ -16,23 +16,45 @@ export default {
     window.addEventListener('mousemove', this.handleCursorMovement);
     window.addEventListener('mousedown', this.handleMouseDown);
     window.addEventListener('mouseup', this.handleMouseUp);
+    window.addEventListener('touchmove', this.diasbleCursorVisibilityPermanently);
     document.body.style.cursor = 'none';
   },
+  data:()=>({
+    timerHandle: null  
+  }),
   methods:{
     handleCursorMovement(e){
+      clearTimeout(this.timerHandle)
       const cursorEl = this.$refs.cursor;
       const pointerEl = this.$refs.pointer;
       const {clientX: x, clientY: y} = e;
+      cursorEl.style.opacity = 1;
+      pointerEl.style.opacity = 1;
       cursorEl.style.top = y - 30 + "px";
       cursorEl.style.left = x - 30 + "px";
       pointerEl.style.top = y - 10 + "px";
       pointerEl.style.left = x - 10 + "px";
+      this.timerHandle = setTimeout(this.diasbleCursorVisibility,2000)
     },
-    handleMouseDown(){
+    diasbleCursorVisibilityPermanently(){
+      const cursorEl = this.$refs.cursor;
+      const pointerEl = this.$refs.pointer;
+      cursorEl.style.display = "none";
+      pointerEl.style.display = "none";
+    },
+    diasbleCursorVisibility(){
+      const cursorEl = this.$refs.cursor;
+      const pointerEl = this.$refs.pointer;
+      cursorEl.style.opacity = 0;
+      pointerEl.style.opacity = 0;
+    },
+    handleMouseDown(e){
+      e.preventDefaults()
       const cursorEl = this.$refs.cursor;
       cursorEl.classList.add('clicked')
     },
-    handleMouseUp(){
+    handleMouseUp(e){
+      e.preventDefaults()
       const cursorEl = this.$refs.cursor;
       cursorEl.classList.remove('clicked')
     },
@@ -58,6 +80,7 @@ input, textarea,.cursor-pointer,.cursor-hand{
   z-index:999;
 }
 .cursor{
+  opacity: 0;
   position: absolute;
   height: 60px;
   width: 60px;
@@ -73,6 +96,7 @@ input, textarea,.cursor-pointer,.cursor-hand{
   transform: scale(1);
 }
 .pointer{
+  opacity: 0;
   position: absolute;
   height: 20px;
   width: 20px;
