@@ -2,16 +2,12 @@
   <div class="LabelHTMLSprite">
     <Transition name="fade">
       <div v-if="displayed" style="opacity-100">
-        <h1 class="text-white opacity-90 z-10 text-6xl sm:text-6xl md:max-w-2xl lg:text-7xl xl:text-8xl font-bold">I'm
-          {{ age.years }} Years,</h1>
+        <h1 class="text-white opacity-90 z-10 text-6xl sm:text-6xl md:max-w-2xl lg:text-7xl xl:text-8xl font-bold">
+          Here's a fun fact about me:
+        </h1>
         <br />
-        <h3 class="z-10 text-white text-2xl sm:text-2xl xl:text-3xl max-w-xl font-thin opacity-90">
-          <b>{{ age.months }}</b> {{ handlePlural(age.months, "month") }} 
-          <b>{{ age.days }}</b> {{ handlePlural(age.days, "day") }}
-          <b>{{ age.hours }}</b> {{ handlePlural(age.hours,"hour") }}
-          <b>{{ age.minutes }}</b> {{ handlePlural(age.minutes, "minute") }}
-          and <b>{{ age.seconds }}</b> {{ handlePlural(age.seconds, "second") }} old.
-        </h3>
+        <h3 v-html="subtext" class="z-10 text-white text-2xl sm:text-2xl xl:text-3xl max-w-xl font-thin opacity-90"/>
+        <span class="input"></span>
       </div>
     </Transition>
   </div>
@@ -26,9 +22,9 @@ export default {
   mixins: [HTMLSpriteMixin],
   data() {
     return {
-      position: new THREE.Vector3(1.2, 0.3, 2.0),
+      position: new THREE.Vector3(1.2, 0.5, 2.2),
       rotation: new THREE.Vector3(Math.PI / 2, -0.1, 0),
-      scale: 1 / 280,
+      scale: 1 / 300,
       displayed: false,
       age: {
         years: 0,
@@ -37,7 +33,18 @@ export default {
         hours: 0,
         minutes: 0,
         seconds: 0
-      }
+      },
+      prompts:[
+        this.computeBirthDateSting,
+        ()=>"I _develop* things for the _web* 🕸️.        ",
+        ()=>"I _love* electronics* ✨.        ",
+        ()=>"Unbiasedly, _Vue.js* > _React* 🤫.         ",
+        ()=>"C is amazing, pointers aren't scary 👻.         ",
+        ()=>"I ❤️ _WebGL* 🪄.        ",
+      ],
+      promptIndex: 0,
+      sentenceIndex: 0,
+      subtext: ""
     };
   },
   methods: {
@@ -50,7 +57,20 @@ export default {
       this.age.hours = diff.getUTCHours();
       this.age.minutes = diff.getUTCMinutes();
       this.age.seconds = diff.getUTCSeconds();
-      // return `I am <b>${y_diff}</b> years\n <b>${m_diff}</b> months <b>${d_diff}</b> days <b>${h_diff}</b> hours <b>${mn_diff}</b> minutes and <b>${s_diff}</b> Seconds old.`;
+      return `I'm _${this.age.years}* ${this.handlePlural(this.age.years,'year')}, _${this.age.months}* ${this.handlePlural(this.age.months,'month')} and _${this.age.days}* _${this.handlePlural(this.age.days,'day')}* old.        `;
+    },
+    prompt(){
+      setTimeout(()=>{
+        let currentPrompt = this.prompts[this.promptIndex]();
+        if(this.sentenceIndex >= currentPrompt.length){
+          this.sentenceIndex = 0;
+          this.promptIndex = (this.promptIndex + 1) % this.prompts.length
+          currentPrompt = this.prompts[this.promptIndex]();
+        }
+        this.subtext = currentPrompt.substring(0, ++this.sentenceIndex).replaceAll("_","<b>").replaceAll("*","</b>") + "|"
+        this.prompt();
+      }, (Math.random() * (5 - 1) + 1) * 30)
+      
     },
     handlePlural(value, word) {
       return `${word}${(value > 1) ? 's' : ''}`;
@@ -59,10 +79,7 @@ export default {
   mounted() {
     this.$el.style.display = "block";
     this.computeBirthDateSting();
-    setInterval(() => {
-      // this.birthDate = this.computeBirthDateSting();
-      this.computeBirthDateSting();
-    }, 1000);
+    this.prompt();
   },
 };
 </script>
@@ -80,5 +97,11 @@ export default {
 .fade-enter-from,
 .fade-leave-to {
   opacity: 0;
+}
+.input{
+  width: 75%;
+  height: 18px;
+  display: flex;
+  border-bottom: 2px solid rgba(255,255,255,.5);
 }
 </style>
