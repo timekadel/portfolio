@@ -12,15 +12,20 @@
         <component :key="$route.path" :is="Component" />
       </keep-alive>
     </Transition>
+    <Cursor/>
   </router-view>
 </template>
 
 <script>
 import Content from "@/minilanding";
 import SubContent from "@/minilanding/sub";
+import Cursor from "./views/components/custom/misc/cursor.component.vue"
 
 export default {
   name: "App",
+  components:{
+    Cursor
+  },
   data() {
     return {
       logo: Content.logo,
