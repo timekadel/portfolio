@@ -18,7 +18,7 @@ export default {
     window.addEventListener('mousemove', this.handleCursorMovement);
     window.addEventListener('mousedown', this.handleMouseDown);
     window.addEventListener('mouseup', this.handleMouseUp);
-    // window.addEventListener('touchmove', this.diasbleCursorVisibilityPermanently);
+    window.addEventListener('touchmove', this.diasbleCursorVisibilityPermanently);
     document.body.style.cursor = 'none';
   },
   data:()=>({
