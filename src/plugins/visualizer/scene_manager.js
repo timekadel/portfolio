@@ -12,8 +12,6 @@ import * as THREE from 'three'
    constructor(){
      if(!instance){
        super();
-      //  this.background = new THREE.Color('#000000');
-      //  this.environment = new RoomEnvironment();
        instance = this;
      }
      return instance;
