@@ -10,13 +10,15 @@
 </template>
 
 <script>
+import _ from 'lodash'
+console.log(_)
 export default {
   name: "CursorComponent",
   mounted(){
     window.addEventListener('mousemove', this.handleCursorMovement);
     window.addEventListener('mousedown', this.handleMouseDown);
     window.addEventListener('mouseup', this.handleMouseUp);
-    window.addEventListener('touchmove', this.diasbleCursorVisibilityPermanently);
+    // window.addEventListener('touchmove', this.diasbleCursorVisibilityPermanently);
     document.body.style.cursor = 'none';
   },
   data:()=>({
@@ -24,17 +26,18 @@ export default {
   }),
   methods:{
     handleCursorMovement(e){
-      clearTimeout(this.timerHandle)
       const cursorEl = this.$refs.cursor;
       const pointerEl = this.$refs.pointer;
+      if(cursorEl && pointerEl){
+      clearTimeout(this.timerHandle)
       const {clientX: x, clientY: y} = e;
       cursorEl.style.opacity = 1;
       pointerEl.style.opacity = 1;
-      cursorEl.style.top = y - 30 + "px";
-      cursorEl.style.left = x - 30 + "px";
-      pointerEl.style.top = y - 10 + "px";
-      pointerEl.style.left = x - 10 + "px";
-      this.timerHandle = setTimeout(this.diasbleCursorVisibility,2000)
+      cursorEl.style.transform = `translate(${x - 30}px,${y - 30}px)`
+      pointerEl.style.transform = `translate(${x - 10}px,${y - 10}px)`
+      this.timerHandle = setTimeout(this.diasbleCursorVisibility,2000);
+      console.log("ok")
+      }
     },
     diasbleCursorVisibilityPermanently(){
       const cursorEl = this.$refs.cursor;
@@ -48,13 +51,11 @@ export default {
       cursorEl.style.opacity = 0;
       pointerEl.style.opacity = 0;
     },
-    handleMouseDown(e){
-      e.preventDefaults()
+    handleMouseDown(){
       const cursorEl = this.$refs.cursor;
       cursorEl.classList.add('clicked')
     },
-    handleMouseUp(e){
-      e.preventDefaults()
+    handleMouseUp(){
       const cursorEl = this.$refs.cursor;
       cursorEl.classList.remove('clicked')
     },
@@ -87,13 +88,13 @@ input, textarea,.cursor-pointer,.cursor-hand{
   background: #ffffffe0;
   border-radius: 50%;
   mix-blend-mode:difference;
-  transition: all .1s ease-out;
   pointer-events: none;
   z-index: 9999;
   display: flex;
   align-items: center;
   justify-content: center;
   transform: scale(1);
+  transition: transform .1s ease-out, opacity .1s ease-in-out;
 }
 .pointer{
   opacity: 0;
@@ -103,7 +104,7 @@ input, textarea,.cursor-pointer,.cursor-hand{
   background: #ffffff30;
   mix-blend-mode:difference;
   border-radius: 50%;
-  transition: all .07s;
+  transition: transform .06s ease-out, opacity .1s ease-in-out;
 }
 .cursor.clicked{
   transform: scale(.9);
