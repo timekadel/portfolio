@@ -12,15 +12,16 @@
           <div
             @click="displayAboutMe"
             style="box-shadow: white 0px 0px 0px 2px"
-            class="pointer-events-auto pointer text-white font-medium cursor-pointer uppercase flex items-center justify-center hover:shadow-md hover:opacity-100 transition-all bottom-5 right-5 rounded-full h-12 w-36 opacity-90"
+            class="btn pointer-events-auto pointer text-white font-medium cursor-pointer uppercase flex items-center justify-center hover:shadow-md hover:opacity-100 transition-all bottom-5 right-5 rounded-full h-12 w-40 opacity-90 pl-2 pr-2"
           >
-            about me
+            <span class="text text-white font-semibold">about me</span>
           </div>
           <div
             @click="displayWork"
-            class="pointer-events-auto border-2 border-transparent bg-white font-medium cursor-pointer uppercase flex items-center justify-center hover:shadow-md hover:opacity-100 transition-all bottom-5 right-5 rounded-full h-12 w-36 opacity-90"
+            class="btn filled pointer-events-auto border-2 border-transparent bg-white font-medium cursor-pointer uppercase flex items-center justify-center hover:shadow-md hover:opacity-100 transition-all bottom-5 right-5 rounded-full h-12 w-40 opacity-90"
           >
-            View My Work
+          <span class="text font-semibold">View My Work</span>
+          <eva-icon class="icon" name="arrow-right" :fill="light ? '#e7e7e7':'#222020'"></eva-icon>
           </div>
         </div>
       </div>
@@ -70,5 +71,28 @@ export default {
 .fade-enter-from,
 .fade-leave-to {
   opacity: 0;
+}
+
+.btn.filled:hover > .text{
+  transform: translateX(-8px);
+}
+
+.text{
+  transform: translateX(0px);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  transition: all .1s;
+  font-weight: 600;
+}
+.icon{
+  width: 0px;
+  opacity: 0;
+  transition: all .1s;
+}
+.btn:hover > .icon{
+ opacity: 1;
+ margin-left:-8px;
+ margin-right: 8px;
 }
 </style>
