@@ -15,13 +15,15 @@
             class="btn pointer-events-auto pointer text-white font-medium cursor-pointer uppercase flex items-center justify-center hover:shadow-md hover:opacity-100 transition-all bottom-5 right-5 rounded-full h-12 w-40 opacity-90 pl-2 pr-2"
           >
             <span class="text text-white font-semibold">about me</span>
+            <eva-icon class="icon" name="arrow-down" fill="#e7e7e7"></eva-icon>
+
           </div>
           <div
             @click="displayWork"
-            class="btn filled pointer-events-auto border-2 border-transparent bg-white font-medium cursor-pointer uppercase flex items-center justify-center hover:shadow-md hover:opacity-100 transition-all bottom-5 right-5 rounded-full h-12 w-40 opacity-90"
+            class="btn pointer-events-auto border-2 border-transparent bg-white font-medium cursor-pointer uppercase flex items-center justify-center hover:shadow-md hover:opacity-100 transition-all bottom-5 right-5 rounded-full h-12 w-40 opacity-90"
           >
           <span class="text font-semibold">View My Work</span>
-          <eva-icon class="icon" name="arrow-right" :fill="light ? '#e7e7e7':'#222020'"></eva-icon>
+          <eva-icon class="icon" name="arrow-right" fill="#222020"></eva-icon>
           </div>
         </div>
       </div>
@@ -73,7 +75,7 @@ export default {
   opacity: 0;
 }
 
-.btn.filled:hover > .text{
+.btn:hover > .text{
   transform: translateX(-8px);
 }
 
