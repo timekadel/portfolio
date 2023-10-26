@@ -10,7 +10,6 @@ export default {
       },
       ltr: true,
       title: " Create Your Own Private Room.",
-      icon: "plus-square-outline",
       subtitle: "Create and share your <b>private room</b> in order for your <b>friends</b> to join in and <b>add songs</b> to the playlist. <b>No downloads required !</b> Roomz is a <b>progressive web-app</b>.",
       hero: "/images/create-join.png",
       cta: [{
@@ -33,7 +32,6 @@ export default {
         preset: "PURPLEPINK"
       },
       title: "Share Your Favourite Tracks! ",
-      icon: "share-outline",
       subtitle: "Browse for <b>tracks</b> and queue what you would like to hear <b>played next</b>. Roomz' refined <b>YouTube based</b> music search allows for <b>tracks, artists and albums</b> discovery.",
       hero: "/images/collaborate.png",
       cta: [{
@@ -57,7 +55,6 @@ export default {
         preset: "REDPINK"
       },
       title: "Let the community decide! ",
-      icon: "inbox-outline",
       subtitle: "Let your <b>guests</b> decide whether they would like to <b>keep</b> a track playing or opt to <b>skip</b> it entirely. <b>majority wins</b>. Skipped tracks will be <b>blacklisted</b> and autoplayed tracks will be regenerated to <b>fit the room's mood!</b>",
       hero: "/images/vote.png",
       cta: [{

@@ -13,7 +13,6 @@ export default {
         preset: "DISCRETEPURPLE2",
         reverse: false
       },
-      icon: "book-outline",
       title: "Simple Object Relational Mapping.",
       subtitle: "<b>SQL queries</b> can be <b>time consuming</b>. Lazy's <b>ORM</b> allows for quick and easy complex SQL <b>table setup</b> and data <b>manipulation</b>. Table schemas are described using straight-forward synthax through <b>JavaScript objects</b>. Lazy handles <b>table migrations</b> automatically.",
       hero: "/images/db.svg",
@@ -39,7 +38,6 @@ export default {
         reverse: true,
         fadeOut: false
       },
-      icon: "book-open-outline",
       title: "Integrated REST API Controllers.",
       subtitle: "Setting up <b>API</b> routes and controllers is a <b>fastidious</b> process. Lazy comes built-in with object-defined API <b>routes controllers</b>. It handles routing hierarchy and authentication through highly configurable <b>middleware functions</b>.",
       hero: "/images/api.svg",
@@ -65,7 +63,6 @@ export default {
         reverse: false,
         fadeOut: true
       },
-      icon: "checkmark-circle-outline",
       title: "End To End Integration Tests.",
       subtitle: "It is no secret that setting up <b>integration tests</b> is a <b>tedious process</b>. Lazy comes <b>built-in</b> with standard end-to-end <b>API endpoints tests</b> and allows for quick and easy <b>test-cases setup</b> for each individual <b>endpoint methods</b>.",
       hero: "/images/lazy_server_logo.svg",

@@ -13,7 +13,6 @@ export default {
         preset: "DISCRETEPURPLE2",
         reverse: true
       },
-      icon: "flash-outline",
       title: "Quick Responsive Landing Pages.",
       subtitle: "Build <b>landing pages</b> in a matter of <b>minutes</b> using minilanding's <b>no-code</b> approach. Simply provide <b>description</b> for your content through <b>Javascript Objects</b>, MiniLanding handle's <b>everything else!</b>",
       hero: "/images/ml.png",
@@ -39,7 +38,6 @@ export default {
         reverse: false,
         fadeOut: true
       },
-      icon: "color-palette-outline",
       title: "Editable Built-In Features.",
       subtitle: "<b>Play around</b> with MiniLanding's built-in <b>features</b> to generate truly <b>unique</b> landing pages. Pick your sections <b>colors</b>, fill in your <b>content</b>, import your <b>assets</b> and you're ready to go!",
       hero: "/images/ml_customize_light2.png",
@@ -65,7 +63,6 @@ export default {
         reverse: true,
         fadeOut: true
       },
-      icon: "code-outline",
       title: "Customize Sections At Will.",
       subtitle: "Feeling <b>Fancy?</b> MiniLanding is built using <b>Vue.js and TailwindCSS</b>. Create and provide your very own sections through <b>Vue components</b>. Minilanding comes <b>pre-packed</b> with features that will <b>guide you along.</b>",
       hero: "/images/ml_customize_light.png",

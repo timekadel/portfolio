@@ -10,7 +10,6 @@ export default {
   toolbarDefaultDisplayed: false,
   sections: [{
       name: "About Me",
-      icon: "eye-outline",
       toolbar: true,
       fullHeiht: true,
       light: false,
@@ -23,7 +22,6 @@ export default {
       name: "Selected Work",
       ltr: true,
       toolbar: true,
-      icon: "activity-outline",
       title: "Autonomous Stage Lighting Systems.",
       subtitle: "<b>ASLS</b> is an <b>organization</b> which specialises in the <b>Research & Development</b> of innovative and <b>open source</b> solutions for <b>show control</b> and show automation.",
       hero: "/images/asls_xs.png",
@@ -105,7 +103,6 @@ export default {
   contact: {
     title: "Get in touch",
     subtitle: "Don't be shy, get in touch with me.",
-    icon: "message-circle-outline",
     formSubmitUrl: "https://formsubmit.co/ajax/eb166882bfe47ee1704efb785a915f0e",
     toolbar: true,
   },

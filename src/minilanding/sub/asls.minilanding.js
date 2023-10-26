@@ -10,7 +10,6 @@ export default {
         preset: "DISCRETEPURPLE2",
         reverse: false
       },
-      icon: "browser-outline",
       title: "Lighting Management Sofware.",
       subtitle: "<b>ASLS Studio</b> is a powerful open-source, web-based, <b>DMX</b> lighting control <b>software</b> and <b>visualizer</b>. It comes with standard DMX lighting control software </b>features</b> such as <b>Universe</b> patching, <b>Fixture</b> grouping, <b>Scene</b> generation, <b>Effect</b> engines and <b>much more</b>.",
       hero: "/images/studio-cropped.png",
@@ -34,7 +33,6 @@ export default {
         preset: "DISCRETEPURPLE2",
         reverse: true,
       },
-      icon: "flash-outline",
       title: "Embedded Solutions For Show Control.",
       subtitle: "ASLS' <b>CueOS</b> designed for <b>Arm® Cortex-M4</b> Microcontrollers provides built-in show control features such as multi-protocol <b>Cue triggering</b>, diverse <b>control outputs</b> and show programmation through <b>web interface</b>.",
       hero: "/images/asls_xs.png",
@@ -58,7 +56,6 @@ export default {
         reverse: false,
         fadeOut: true
       },
-      icon: "layers-outline",
       title: "\"Q\", Show Control Protocol To Rule Them All.",
       subtitle: "ASLS' <b>Q protocol</b> proposal was designed in order to stop once and for all <b>compatibility issues</b> in show control. <b>MSC</b> inspired, Q's modern approach aims to <b>unify and standardize</b> cue-triggering  approaches in show control.",
       hero: "/images/controls.png",
