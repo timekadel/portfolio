@@ -3,15 +3,11 @@
     <div ref="cursor" class="cursor"/>
     <div ref="pointer" class="pointer"/>
     <div ref="floaters" class="floaters">
-
     </div>
-
   </div>
 </template>
 
 <script>
-import _ from 'lodash'
-console.log(_)
 export default {
   name: "CursorComponent",
   mounted(){
@@ -36,7 +32,6 @@ export default {
       cursorEl.style.transform = `translate(${x - 30}px,${y - 30}px)`
       pointerEl.style.transform = `translate(${x - 10}px,${y - 10}px)`
       this.timerHandle = setTimeout(this.diasbleCursorVisibility,2000);
-      console.log("ok")
       }
     },
     diasbleCursorVisibilityPermanently(){
